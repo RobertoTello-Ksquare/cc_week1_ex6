@@ -13,8 +13,19 @@
 const cypher = (encoded) => {
     
     /* Only make changes below this comment */
-    
-   return encoded;
+    const letters = encode.split(''); //we start by making an array
+    let decode = ''; //make a variable for the result
+    letters.forEach(Element => {  //we build the base for the cycle 
+    /*inside the num we make our conditions, if our Element is 
+    greater than 90 or less than 65 its value would be 
+    the char transformed into a num, else, if we add 13 to a number and
+    that number is greater than 90 we add 13 to the char
+    else we  substract 13 to our char
+    */
+    let num = (Element.charCodeAt(0)>90 || Element.charCodeAt(0)<65 ? Element.charCodeAt(0) :(Element.charCodeAt(0)+13) >90 ? Element.charCodeAt(0)-13:Element.charCodeAt(0)+13);
+    decode += String.fromCharCode(num);      
+    return decode;
+    });
     /* Only make changes above this comment */
 }
 
